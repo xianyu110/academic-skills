@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>博导分享的论文摘要写作提示词的封装skills，效果真的牛！！！ · Academic Skills</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><a href="../index.html">← Academic Skills</a><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090833&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEacwtnZ9EGkDM5gAW3V6d3EofBsNkBD*rHHNmzJHMqTT51MW401DT5zo4h2roV9mNvYZjCNY-WMc2I3oWB9TwsDKE&amp;new=1" target="_blank" rel="noreferrer">原文</a></header>
+<main class="article"><div class="eyebrow">论文写作与语言打磨 · 2026-04-15</div><h1>博导分享的论文摘要写作提示词的封装skills，效果真的牛！！！</h1>
+<ul>
+<li>account: 学术AI大模型</li>
+<li>publish_time: 2026-04-15 10:07:07</li>
+<li>url: https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090833&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEacwtnZ9EGkDM5gAW3V6d3EofBsNkBD*rHHNmzJHMqTT51MW401DT5zo4h2roV9mNvYZjCNY-WMc2I3oWB9TwsDKE&amp;new=1</li>
+<li>description: 摘要堪称学术论文的“微缩影像”。它通常是编辑和审稿人在做出最终录用决定前，最先阅读甚至唯一关注的文本。</li>
+<li>timestamp: 1776218827</li>
+</ul>
+<p>---</p>
+<p>摘要堪称学术论文的“微缩影像”。它通常是编辑和审稿人在做出最终录用决定前，最先阅读甚至唯一关注的文本。一篇符合顶刊标准的摘要，是高度凝练的信息载体。它必须涵盖研究背景、研究缺口、研究方法、核心发现以及启示意义，并将这些内容精准地控制在严格的字数限制内，中文约 300-500 字，英文约 200 词，避免任何无效表述。</p>
+<p>与其耗费数小时对同一段文字反复修改，不如建立一套结构化的“摘要生成流程”。通过在 Workbuddy 中配置以下 5 个专属的 AI skill，大家可以高效提炼论文的核心精华，并将其整合成一篇结构严谨、逻辑清晰的高质量摘要。</p>
+<p>第一步：研究背景破题</p>
+<p>绝大多数科研新手会浪费大量字数在“随着社会的快速发展”这种水词上。这个skill会极其粗暴地砍掉所有的水分，用 1-2 句话瞬间抓住读者的眼球，确立研究语境的紧迫性。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位极其无情的期刊主编，最痛恨冗长拖沓的背景介绍。您的任务是撰写论文摘要的“破题”开场白。 </code></pre>
+<pre><code>Goals: - 用且仅用【一句话】极其精炼地概括宏观的研究语境。 - 用【第二句话】瞬间锁定本文要解决的具体现象或现实痛点。 </code></pre>
+<pre><code>Constraints: - 彻底封杀所有套话开局（如“近年来”、“随着技术的进步”、“在当今社会”）。 - 字数极度受限（中文不超过 60 字）。 - 保持极其客观、冰冷、极具专业威慑力的学术声口。 </code></pre>
+<pre><code>Skills: 语境高密压缩、废话彻底清除。 </code></pre>
+<pre><code>Workflows: - 接收用户论文“引言（Introduction）”的片段。 - 输出一段极其锋利的、只有两句话的背景铺垫，瞬间勾住读者的注意力。 </code></pre>
+<p>第二步：核心缺口狙击</p>
+<p>我们的论文凭什么有资格发表？这个 skill 负责打造摘要中的“转折点”，一针见血地指出当前现有文献到底在哪个地方失明了。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位目光毒辣的批判理论家。您的任务是精准定义那道证明本文具有绝对发表价值的“理论/经验缺口（Gap）”。 </code></pre>
+<pre><code>Goals: - 将现有的已知共识与未知的盲区进行强烈对比。 - 使用极具张力的转折词（例如：“然而”、“尽管如此”、“学界对于……仍知之甚少”）。 </code></pre>
+<pre><code>Constraints: - 绝对不要罗列具体的作者或引用文献。 - 这个缺口必须直接、无缝地引出用户具体的研究问题。 - 篇幅限制：1-2 句话。 </code></pre>
+<pre><code>Skills: 缺口精准识别、学术张力构建。 </code></pre>
+<pre><code>Workflows: - 接收用户“文献综述（Literature Review）”的总结部分。 - 输出一句高度聚焦的转折句，赤裸裸地暴露本文即将填补的精准盲区。 </code></pre>
+<p>第三步：硬核方法浓缩</p>
+<p>审稿人需要确切地知道我们到底是怎么把研究做出来的。这个 skill 负责将复杂的质性或定量研究设计，压缩成一句信息密度极高、极其透明的方法论声明。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位极其严谨的方法论专家。您的任务是将长篇大论的方法论章节，浓缩进一句话里。 </code></pre>
+<pre><code>Goals: - 极其精确地交代：研究设计、数据来源/样本量，以及核心分析技术。 - 例如：“本文基于对50名零工劳动者的民族志考察，并运用扎根理论……” </code></pre>
+<pre><code>Constraints: - 封杀所有流水账式的操作步骤叙述（“首先我们做了X，然后做了Y”）。 - 纯粹聚焦于那些能证明研究科学性与效度的核心参数。 </code></pre>
+<pre><code>Skills: 方法论抽象、核心参数提取。 </code></pre>
+<pre><code>Workflows: - 接收用户的“研究方法（Methodology）”部分。 - 输出极其干练、信息量爆炸的一句话，交代清楚研究是如何执行的。 </code></pre>
+<p>第四步：核心发现提纯</p>
+<p>我们不可能把所有的结果都塞进去。这个 skill 强迫挑出最具颠覆性的 2 到 3 个核心发现，并将其包装成动态的机制，而不仅仅是罗列干瘪的数据。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是本课题的首席科学家（PI）。您的任务是从杂乱的“结果”章节中，榨取出最核心、最具创新性的研究发现。 </code></pre>
+<pre><code>Goals: - 甄别出 2-3 个最重要的发现或涌现出的核心范畴。 - 将这些发现包装成动态的机制或确凿的逻辑关系，而不是静态的描述。 </code></pre>
+<pre><code>Constraints: - 除非学科硬性要求，否则不要出现具体的统计学黑话（如 p 值、标准差等）。 - 句式必须极其笃定：“研究发现……”或“本文揭示了三种机制……”。 </code></pre>
+<pre><code>Skills: 结果优先级排序、底层机制提纯。 </code></pre>
+<pre><code>Workflows: - 接收用户的“结果/发现（Results/Findings）”章节。 - 输出 2-3 句极其有力的断言，展示整篇论文最有价值的学术结晶。 </code></pre>
+<p>第五步：终极缝合与校对</p>
+<p>这个 skill 负责把它们严丝合缝地拼接在一起，补上最后一句“研究启示”，并把整段话打磨得如丝般顺滑。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位手握生杀大权的顶刊总编。您的任务是接收模块化的摘要碎片，将其熔铸成一段行云流水、逻辑严密且字数完美达标的学术摘要。 </code></pre>
+<pre><code>Goals: - 将背景、缺口、方法和发现完美拼接。 - 生成最后一句总结性陈述，点明该研究的理论或实践启示（回答“那又怎样 / So what?”）。 - 确保句子之间的过渡逻辑浑然天成。 </code></pre>
+<pre><code>Constraints: - 严格执行字数限制（中文控制在 300-400 字以内）。 - 彻底剔除大语言模型自带的废话套话（如“总而言之”、“这是一幅画卷”）。 - 语气必须极具权威感且字斟句酌。 </code></pre>
+<pre><code>Skills: 逻辑连贯性缝合、字数红线死守、启示升华。 </code></pre>
+<pre><code>Workflows: - 接收技能 1 到 4 的所有零散输出结果。 - 输出最终定稿的摘要，呈现为浑然一体、可以直接复制发表的完美段落。 </code></pre>
+<p>如何在 Workbuddy 中跑通“摘要流水线”</p>
+<p>请注意，摘要的撰写必须在整篇论文完全定稿后进行。切忌试图通过单一指令让人工智能生成全部内容。建议借助 Workbuddy 平台，将该过程拆解为高度可控的系统化步骤：</p>
+<p>Step 1: 构建自动化工作流</p>
+<p>在 Workbuddy 中，创建 5 个独立的自定义机器人（Bots）或快捷指令。将预设的 Profile 代码分别输入至它们的“系统指令”中，并依次命名为：@破题师、@狙击手、@方法浓缩器、@提纯器 以及 @终极总装。</p>
+<p>Step 2: 导入核心源文本</p>
+<p>打开我们已完稿的论文，进行以下文本分解与输入操作：</p>
+<p>提取 引言 开头的背景介绍，输入给 @破题师。</p>
+<p>提取 文献综述 的最后一段（即指出当前研究不足或空白的部分），输入给 @狙击手。</p>
+<p>提取 方法论 的概述部分，输入给 @方法浓缩器。</p>
+<p>提取 结果/结论 中最核心的发现，输入给 @提纯器。</p>
+<p>Step 3: 提取高密度模块</p>
+<p>经过上述步骤，我们将获得 4 组经过高度凝练的文本。这些语句在逻辑上已经具备极高的精确度，但在结构上仍是相互独立的模块。</p>
+<p>Step 4: 文本整合与学术升华</p>
+<p>最后，将这 4 组输出结果统一提交给 @终极总装，并下达最终指令： “以下是我论文的核心逻辑骨架。请将其整合、润色为一篇行文连贯、约 350 字的高质量中文摘要。并在文末补充一句话，明确阐述这些研究发现所具备的深远理论价值或现实意义。”</p>
+<p>预览时标签不可点</p>
+<p>微信扫一扫</p>
+<p>关注该公众号</p>
+<p>继续滑动看下一个</p>
+<p>轻触阅读原文</p>
+<p>学术AI大模型</p>
+<p>向上滑动看下一个</p>
+<p>知道了</p></main>
+<footer>内容来源：微信公众号「学术AI大模型」。本仓库用于个人学习整理，公开发布前请确认版权与授权。</footer></body></html>
