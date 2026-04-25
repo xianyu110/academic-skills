@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>火爆全网的Skills，看这一篇就够了！ · Academic Skills</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><a href="../index.html">← Academic Skills</a><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090837&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEacwGZb1XlyilToaZkG1Xr8vRunwK6ZbpQWAd7v9NkonGwxolvN9zpjDRhABIv2lo-eUGNgKAWjF0YOffSXqqJQSw&amp;new=1" target="_blank" rel="noreferrer">原文</a></header>
+<main class="article"><div class="eyebrow">Skills 方法论 · 2026-03-01</div><h1>火爆全网的Skills，看这一篇就够了！</h1>
+<ul>
+<li>account: 学术AI大模型</li>
+<li>publish_time: 2026-03-01 10:10:35</li>
+<li>url: https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090837&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEacwGZb1XlyilToaZkG1Xr8vRunwK6ZbpQWAd7v9NkonGwxolvN9zpjDRhABIv2lo-eUGNgKAWjF0YOffSXqqJQSw&amp;new=1</li>
+<li>description: 近年来，大模型Skills技术在人工智能领域备受关注，其工程化应用价值已逐渐比肩模型上下文协议MCP。</li>
+<li>timestamp: 1772331035</li>
+</ul>
+<p>---</p>
+<p>近年来，大模型Skills技术在人工智能领域备受关注，其工程化应用价值已逐渐比肩模型上下文协议MCP。本文旨在系统性地解析 Claude Agent Skills 的核心原理、与现有技术的差异，并提供详细的使用与开发指南。</p>
+<p>一、 什么是 Skill？</p>
+<p>在理解 Claude Agent Skills 之前，我们可以将“Skill（技能）”定义为执行特定任务的方法论。以打网球为例：面对飞来的网球，运动员需要跑位、并在恰当的时机以合适的力度击球，以确保球落在界内。这一整套操作逻辑即为“技能”。</p>
+<p>在人工智能领域，Skills 是引导大模型按照特定方法论执行任务的机制，可被视为“高度结构化的提示词”。一个完整的 Skill 通常由以下三个核心组件构成：</p>
+<p>元数据： 包含对该技能的简要描述。它驻留在全局上下文中，由于占用空间极小，能够有效节省 Token 消耗。</p>
+<p>行动指南： 这是技能的核心指令部分，明确规定了 AI 在执行任务时的具体步骤和规范。</p>
+<p>资源文件： 技能的执行载体。它可以包含 Python 脚本或其他可执行程序，确保模型在调用该 Skill 时能够完成复杂的操作逻辑。</p>
+<p>Skills 的核心优势在于其采用了 渐进式披露机制。通过分层加载信息，该机制既能确保 AI 在必要时获取所需的知识，又能最大化地提升上下文的利用效率。</p>
+<p>二、 Skills 与 MCP 的区别</p>
+<p>在 AI 工程实践中，Skills 与 MCP（Model Context Protocol）常被提及。两者的核心区别如下：</p>
+<p>MCP 侧重于“连接”： 赋予 AI 访问外部世界如文件系统、数据库、API的能力。</p>
+<p>Skills 侧重于“方法论”： 教授 AI 如何完成某类特定任务。</p>
+<p>详细对比：</p>
+<p>Skills 应用场景： 聚焦于工具处理和完整的方法论应用。例如：处理复杂文档、系统设计或文章撰写。其输入和输出多为自然语言，优势在于灵活、易读且易于维护。</p>
+<p>MCP 应用场景： 聚焦于深度集成外部系统，适合自定义的上传、下载、推送等流程。其擅长工具化操作，输入输出通常为结构化数据如 JSON 参数，优势在于可组合、可测试和可缓存。</p>
+<p>协同关系：</p>
+<p>两者并非替代关系，而是互补关系。对于普通用户的日常任务，单独使用 Skills 通常即可满足需求；而在复杂的企业级场景或跨平台自动化分发任务中，采用 Skills + MCP 的组合架构能够实现更稳定、高效的输出。</p>
+<p>三、 核心概念的工作流整合</p>
+<p>为了更清晰地理解 AI Agent 的完整工作逻辑，我们可以将以下四个核心概念串联起来：</p>
+<p>Prompt： 用户通过自然语言向 AI 下达的明确需求与目标，是启动任务的信号。</p>
+<p>Skills： AI 根据指令，从专业能力库中调用的封装流程与知识如代码规范、数据分析框架）。</p>
+<p>Projects： AI 推进任务的持久化专属空间，全程保留背景资料与中间成果，避免上下文丢失。</p>
+<p>MCP： AI 通过标准化接口安全接入外部资源如数据库、企业云盘的执行桥梁。</p>
+<p>总结： Prompt 是“需求指令”，Skills 是“专业流程”，Projects 是“专属空间”，而 MCP 是“连接现实世界的桥梁”。</p>
+<p>四、 Skills 的配置与使用指南</p>
+<p>1. 在 Cursor 中使用 Skills</p>
+<p>在 Cursor 开发环境中配置 Skills 仅需以下四个步骤。当然一切前提是安装好cursor！ 在 Cursor 软件中，点击顶部菜单栏的 Terminal -&gt; New Terminal，或者使用快捷键 Ctrl + `，然后在终端窗口输入以下命令。</p>
+<p>步骤一：安装 OpenSkills 核心库</p>
+<p>npm install -g openskills@ 1 . 2 . 1</p>
+<p>步骤二：安装官方 Skills 库 （需确保 GitHub 访问畅通）</p>
+<p>openskills install anthropics/skills</p>
+<p>步骤三：环境同步。在项目根目录创建 AGENTS.md 文件，并执行同步命令：</p>
+<p>openskills sync</p>
+<p>步骤四：实际应用。例如，可直接调用 xlsx skills 自动生成 20 条登录注册的测试用例。</p>
+<p>2. 在 Claude Code 中使用 Skills</p>
+<p>步骤一：安装并启动 Claude Code</p>
+<p>首先到claude code官网用合适的方法安装claude code。如果是Windows系统的话，可以先按win键，直接键盘输入powershell，然后在跳出的终端输入安装代码。</p>
+<p>在终端执行以下命令进行全局安装：</p>
+<p>npm install - g @anthropic-ai /claude-code</p>
+<p>进入目标工程目录后，输入 claude 即可启动。注意，请确保网络环境支持访问 Anthropic 服务。否则便会跟我一样，访问失败！</p>
+<p>步骤二：安装 Skills</p>
+<p>自然语言安装： 直接向系统发送指令。例如：“帮我安装下 skill，项目地址是： https://github.com/anthropics/skills/blob/main/skills/pptx ”。系统将解析意图并自动完成安装。</p>
+<p>手动安装： 下载对应的 Skill 安装包，并将其解压至本地的 .claude/skills/ 目录下。</p>
+<p>步骤三：调用执行</p>
+<p>直接输入提示词即可触发，例如：“用 pptx skill 创建一个关于 Claude Skills 的演示文稿”。系统将在短时间内自动生成格式良好的 PPT 文件。</p>
+<p>3、在Vscode中使用skills</p>
+<p>步骤一：安装 VS Code 核心插件</p>
+<p>为了在编辑器内获得最佳体验，建议优先使用官方原生插件。</p>
+<p>打开 VS Code，进入左侧的 Extensions（扩展） 面板。</p>
+<p>搜索并安装 Claude Code 官方插件，标识符为 anthropic.claude-code 。</p>
+<p>注：如果您使用的是最新版 GitHub Copilot（2025年底及之后版本），它也已经原生兼容了针对 Claude 设计的 .claude/skills/ 目录规范。</p>
+<p>步骤二：配置全局环境与依赖</p>
+<p>虽然您可以手动创建文件，但使用包管理工具能够极大提升效率。请在 VS Code 的集成终端（ Ctrl + ~ ）中执行以下命令：</p>
+<p>node -v npm -v</p>
+<p>结果判定：如果能看到类似 v18.x.x 这样的版本号，说明准备就绪；如果提示“找不到命令”，请先前往 Node.js 官网 下载并安装长期支持版 (LTS)。</p>
+<p>然后全局安装 Claude Code CLI：</p>
+<p>npm install - g @anthropic-ai /claude-code</p>
+<p>（可选但推荐）全局安装 OpenSkills 工具，方便后续从开源社区拉取技能：</p>
+<p>npm install - g openskills</p>
+<p>步骤三：在项目中引入与安装 Skills</p>
+<p>将终端路径切换到您的工作区（项目根目录），</p>
+<p>cd D:\您的\项目\完整路径</p>
+<p>选择以下任意一种方式引入 Skills：</p>
+<p>方式 A：通过自然语言让 AI 自动安装 在 VS Code 侧边栏的 Claude Chat 对话框或集成终端中输入： &quot;请帮我安装官方的代码审查 skill：https://github.com/anthropics/skills/blob/main/skills/code-reviewer&quot;</p>
+<p>方式 B：通过终端命令拉取 执行以下命令，工具会自动在项目根目录创建 .claude/skills 文件夹并下载官方技能包：</p>
+<p>步骤四：在 VS Code 中验证与调用</p>
+<p>配置完成后，您可以在日常开发中直接调用它们：</p>
+<p>验证加载状态 ：在 VS Code 的 Claude Chat 视图中，右键点击空白处并选择 Diagnostics（诊断） ，您可以清晰地看到当前已成功加载的自定义 Agent 和 Skills 列表。</p>
+<p>直接调用 ：在侧边栏聊天框或内联生成窗口中，使用自然语言明确指定所用技能。例如：</p>
+<p>&quot;请使用 code-reviewer skill 帮我审查当前打开的 app.ts 文件。&quot;</p>
+<p>&quot;用 sql-optimization-patterns skill 优化高亮处的数据库查询逻辑。&quot;</p>
+<p>五、 如何创建自定义 Skills</p>
+<p>针对特定领域的业务需求，开发专属的 Skills 至关重要。官方提供了一个高效的辅助工具： skill-creator 。</p>
+<p>开发流程示例（以 PDF 转 PPT 为例）：</p>
+<p>首先，通过指令或手动方式将 skill-creator 安装至 ~/.claude/skills 目录。</p>
+<p>在开发环境中启动 skill-creator ，并输入需求：“创建一个能够自动将 PDF 转换为 PPT 格式的 skill”。</p>
+<p>工具将自动生成相应的 Metadata、Action Guide 及资源文件。</p>
+<p>验证测试： 上传测试文件如“阿里巴巴Android开发手册.pdf”，并输入提示词：“帮我把该文档转为 PPT 格式”。验证输出文件是否符合预期。整个创建过程可在几分钟内闭环完成。</p>
+<p>六、 高频优秀 Skills 推荐</p>
+<p>以下推荐几款在开源社区中具有高实用价值的 Claude Skills，适合不同技术栈的开发者：</p>
+<p>code-reviewer (多语言代码审查)： 弥补人工审查标准的差异，支持自动扫描代码质量、安全漏洞及性能瓶颈，并提供修改建议。</p>
+<p>pair-programming (AI 驱动结对编程)： 提供 Driver、Navigator 等多种协作模式，支持实时代码 Review 与方法论引导，适用于 TDD 开发与重构。</p>
+<p>sql-optimization-patterns (SQL 性能优化)： 自动解读 EXPLAIN 计划，定位全表扫描等瓶颈，识别常见数据库反模式，显著提升查询性能。</p>
+<p>dbt-transformation-patterns (数据转换实践)： 提供 dbt 工程化的架构推荐与自动化测试脚本生成，适合数据分析团队使用。</p>
+<p>senior-prompt-engineer (提示词专家)： 提供 Few-shot 等 Prompt 架构设计，优化 RAG 检索策略，辅助构建复杂的自动化 Agent 工作流。</p>
+<p>主流 Skills 获取渠道：</p>
+<p>Anthropic 官方市场： GitHub 官方维护，提供标准化技能包。</p>
+<p>GitHub 社区生态： 开发者主导，支持灵活自定义与持续集成。</p>
+<p>awesome-claude-skills： 高质量技能资源集合，覆盖文档处理、数据分析等高频场景。</p>
+<p>七、 常见问题与排错指南</p>
+<p>在实际部署与使用 Skills 时，可能会遇到以下常见问题：</p>
+<p>现象 可能原因 解决建议 Skill 触发不稳定 Metadata 中的 description 描述不够精准 在提示词中显式声明：“使用 [Skill 名称] 执行此任务” Token 上下文消耗过大 SKILL.md 包含过多冗余信息 将长文本提取并引用为外部文件，例如存放在 resources/ 目录下 更新版本未生效 本地缓存或文件冲突 删除旧版本对应的 Skill 文件夹后重新加载 API 调用超时无响应 缺少合理的超时机制与重试策略 1. 设置合理的请求超时阈值；2. 增加降级重试逻辑；3. 采用异步调用</p>
+<p>八、 结语</p>
+<p>面对日益繁荣的 Skills 生态，评估一个 Skill 价值的核心标准在于： 它是否能够切实优化您的标准作业程序（SOP），实现效率的量级提升。 建议开发者先从使用成熟的开源 Skills 入手，熟悉其运作机制后，再结合自身的业务痛点开发定制化的企业级技能包。</p>
+<p>预览时标签不可点</p>
+<p>微信扫一扫</p>
+<p>关注该公众号</p>
+<p>继续滑动看下一个</p>
+<p>轻触阅读原文</p>
+<p>学术AI大模型</p>
+<p>向上滑动看下一个</p>
+<p>知道了</p></main>
+<footer>内容来源：微信公众号「学术AI大模型」。本仓库用于个人学习整理，公开发布前请确认版权与授权。</footer></body></html>
