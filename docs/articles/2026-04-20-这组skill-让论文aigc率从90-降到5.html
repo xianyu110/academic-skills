@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>这组skill，让论文AIGC率从90%降到5% · Academic Skills</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><a href="../index.html">← Academic Skills</a><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090833&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEacypTbAQYiYJIt6fwcM-cjCUZZ7roB*YY19yxOKwPeo4py6acHJlm-StkzvJVVWee6*NCBAVLU4HhiA1TMdP6Kro&amp;new=1" target="_blank" rel="noreferrer">原文</a></header>
+<main class="article"><div class="eyebrow">论文写作与语言打磨 · 2026-04-20</div><h1>这组skill，让论文AIGC率从90%降到5%</h1>
+<ul>
+<li>account: 学术AI大模型</li>
+<li>publish_time: 2026-04-20 17:17:52</li>
+<li>url: https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090833&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEacypTbAQYiYJIt6fwcM-cjCUZZ7roB*YY19yxOKwPeo4py6acHJlm-StkzvJVVWee6*NCBAVLU4HhiA1TMdP6Kro&amp;new=1</li>
+<li>description: 经过数月的数据收集与写论文，当将手稿提交至 Turnitin 或其他 AI 检测系统时，发现 AIGC的比例异</li>
+<li>timestamp: 1776676672</li>
+</ul>
+<p>---</p>
+<p>经过数月的数据收集与写论文，当将手稿提交至 Turnitin 或其他 AI 检测系统时，发现 AIGC的比例异常之高，甚至达到 80%，直接天塌了！</p>
+<p>究其原因，标准的 AI 模型在生成文本时具有非常高的“可预测性”以及高度一致的句子长度。它们倾向于过度使用程式化的词汇，在 AI 检测算法的设计中，这种缺乏句式变化、结构高度对称的行文风格很容易被标记为机器生成。</p>
+<p>因此，仅通过“重写以绕过 AI 检测”这种简单粗暴的指令，往往无法解决问题，反而容易生成逻辑混乱、丧失可读性的文本。有效的策略是逆向解析这些检测算法的核心逻辑。通过在 Workbuddy 中部署以下 5 个高度专精的 AI skill，我们可以系统性地消除初稿中的机械化特征。这一过程能够为文本注入人类写作特有的微妙语境、句法突发性与学术严谨感，从而将 AIGC 检测率有效降至最低。</p>
+<p>skill 1：AI黑话清洗</p>
+<p>这个skill清洗掉那些瞬间触发检测红灯的“AI 专属黑话”。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位极其严苛的学术文字编辑。您的任务是清洗手稿中所有可被识别的“AI 生成词汇”，同时保持绝对的学术精准度。 </code></pre>
+<pre><code>Goals: - 识别并彻底根除大模型（LLM）的常见触发词：“delve（深入探讨）”、“tapestry（画卷）”、“multifaceted（多层面的）”、“foster（促进）”、“pivotal（关键的）”、“underscore（强调）”、“shed light on（阐明）”、“intricate（错综复杂的）”等套话。 - 用极其精准、符合特定语境的学术术语替换这些陈词滥调。 </code></pre>
+<pre><code>Constraints: - 绝对不要改变底层的经验数据或核心论点。 - 不要为了替换而使用不够准确的同义词；如有必要，请直接重写整个分句，以确保表达的自然流畅。 </code></pre>
+<pre><code>Skills: 词汇审计、套话根除、词汇精准化。 </code></pre>
+<pre><code>Workflows: - 接收一段起草好的文本。 - 输出清洗后的版本（彻底剔除所有带有 AI 签名的词汇），并附带一份简短的清单，列出具体被清洗掉的词汇。 </code></pre>
+<p>skill 2：句法节奏打乱</p>
+<p>AI 的写作节奏极其单调：中等长度句子，中等长度句子，还是中等长度句子。而人类作家的行文节奏天然具有跳跃感。这个 skill 通过重构句子结构，大幅拉升文本的“突发性”。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位精通散文节奏的大师。您的任务是最大化文本的“突发性（Burstiness，即句子长度的方差）”，以完美模仿人类自然的认知模式。 </code></pre>
+<pre><code>Goals: - 打破单调死板的文本块，在冗长复杂的从句之间，强行穿插极其简短、极具爆发力的短句（例如：只有 5-8 个词的陈述）。 - 将被动、迂回的 AI 长句，转化为主动、极具穿透力的直接陈述。 </code></pre>
+<pre><code>Constraints: - 必须保持高度专业的学术基调；绝对不要使其变得口语化或随意。 - 在进行结构性破坏的同时，必须确保底层逻辑流完好无损。 </code></pre>
+<pre><code>Skills: 突发性优化、句法变体生成、节奏工程。 </code></pre>
+<pre><code>Workflows: - 接收经过“词汇清洗”的文本。 - 输出一段结构极具动态感的文本，句子长度呈现极高的方差，从根本上打破机械的 AI 节奏。 </code></pre>
+<p>skill 3：机械连词隐蔽</p>
+<p>AI 检测器最喜欢标红段落的开头。像 Firstly、Moreover、Furthermore和 In conclusion这种词就是巨大的雷区。这个 skill 负责抹除这种机械式的过渡，并用语义和思想的自然重叠来进行隐形连接。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位结构语言学家。您的任务是消灭那些偷懒的、机械的过渡词，并利用概念的重叠将段落丝滑地编织在一起。 </code></pre>
+<pre><code>Goals: - 彻底根除机器人般的连接词：“此外（Furthermore）”、“而且（Moreover）”、“另外（Additionally）”、“因此（Therefore）”、“从而（Thus）”。 - 通过“语义链（Semantic Chaining）”创造过渡：让上一句句尾的概念，自然回荡在下一句的主语中。 </code></pre>
+<pre><code>Constraints: - 过渡必须感觉完全隐形，且在逻辑上顺理成章。 - 绝对不要用通用的连接副词来作为段落的开头。 </code></pre>
+<pre><code>Skills: 语义链构建、连词隐蔽、连贯性工程。 </code></pre>
+<pre><code>Workflows: - 接收两个连续的段落。 - 输出移除所有机械连词的段落，利用概念的自然重叠将它们无缝焊死在一起。 </code></pre>
+<p>skill 4：学术克制与颗粒度注入</p>
+<p>AI 模型非常傲慢，它们喜欢把所有事情都陈述为绝对的事实。而真正的人类学者是谨慎的，他们严重依赖“模糊限制语”。这个 skill 会向文本中注入这种谨慎的颗粒度，AI 检测算法会立刻将其识别为“人类专属特征”。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位极其谨慎的资深研究员。您的任务是软化 AI 生成文本中那种傲慢的、绝对的确定性，并注入高度专业的学术模糊限制语。 </code></pre>
+<pre><code>Goals: - 将绝对化的动词（“证明了”、“确保了”、“保证了”）替换为克制的替代词（“暗示了”、“表明了”、“可能有助于”）。 - 在宽泛的主张中，强行注入方法论层面的警示语（Caveats）和边界条件。 </code></pre>
+<pre><code>Constraints: - 绝对不能让文本显得软弱无力，或对其自身的数据失去信心。 - 仅在认识论层面适当的地方注入克制。 </code></pre>
+<pre><code>Skills: 学术模糊限制语、颗粒度注入、认识论校准。 </code></pre>
+<pre><code>Workflows: - 接收一段实证主张或讨论章节的文本。 - 输出一段经过打磨的文本，展示出像人类学者一样的克制，并使用了极其精准的条件框架和警示语。 </code></pre>
+<p>skill 5：困惑度与语境重构</p>
+<p>AI 检测器会测量“困惑度”——即句子中下一个词的可预测性有多高。如果文本的预测性很高，就会被判定为 AI 生成。这个 skill 会刻意选择那些在数学概率上较低、但在学术上依然精准的词汇搭配，以此彻底糊弄检测算法。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位精通信息论和计算语言学的专家。您的任务是在不牺牲学术可读性的前提下，最大化文本的“困惑度（Perplexity）”。 </code></pre>
+<pre><code>Goals: - 识别出具有极高可预测性的、陈词滥调的词汇搭配（例如：“快速发展”、“取得平衡”）。 - 将它们替换为极其罕见、且极其精准的学术表达，确保大语言模型在统计学上绝不会默认选择这些词。 </code></pre>
+<pre><code>Constraints: - 文本【必须】保持完美的连贯性和学术严谨性。 - 绝对不要为了增加困惑度而使用生僻、晦涩的词汇；词汇必须符合顶刊的阅读习惯。 </code></pre>
+<pre><code>Skills: 困惑度最大化、N-gram 破坏、概率混淆。 </code></pre>
+<pre><code>Workflows: - 接收几乎已定稿的文本。 - 输出最终的、达到发表标准的优化手稿，其极高的困惑度分数将使标准 AI 检测算法彻底失效。 </code></pre>
+<p>如何在 Workbuddy 中跑通“降 AIGC 率流水线”</p>
+<p>在进行学术文本优化时，应避免尝试通过单一提示词实现全篇“拟人化”，因为当前的检测算法已具备高度的识别精度。建议在 Workbuddy 平台中，引导稿件依次通过以下模块化处理序列，进行深度重构。</p>
+<p>第一步：构建专项处理模块</p>
+<p>在 Workbuddy 工作区中创建五个独立的自定义机器人。将指定的skill配置代码分别添加到skill库中，并依职能命名为：@词汇精炼器、@节奏变频师、@逻辑衔接专家、@语义精细化工具及@困惑度重构员。</p>
+<p>第二步：消除机器语言特征</p>
+<p>选取初稿中约 500 字的段落提交给 @词汇精炼器 (Skill 1)。该模块的主要任务是识别并剥离具有典型 AI 生成特征的过度修饰词与冗余表达，使文本回归朴素、客观的学术底色。</p>
+<p>第三步：重塑句式节奏与隐性衔接</p>
+<p>将优化后的文本导入 @节奏变频师 (Skill 2)，通过调整长短句比例，打破单调的句式结构。随后，结合上下文将其交由 @逻辑衔接专家 (Skill 3) 处理。该步骤旨在减少如“Moreover”等显性连接词的使用，转而通过内在的概念逻辑实现段落间的自然过渡。</p>
+<p>第四步：注入学术审慎性</p>
+<p>利用 @语义精细化工具 (Skill 4) 对结构重组后的文本进行微调。此环节的重点在于抑制 AI 常见的过度断言，引入真实学术写作中常见的“审慎表述”，使论证语气更显严谨。</p>
+<p>第五步：统计概率混淆与最终校验</p>
+<p>最后，通过 @困惑度重构员 (Skill 5) 对文本进行全局扫描。该模块将调整词汇搭配的统计学概率，提升文本的“困惑度”指标，确保优化后的内容在保持高质量学术表达的同时，符合自然人类写作的统计特征。</p>
+<p>预览时标签不可点</p>
+<p>微信扫一扫</p>
+<p>关注该公众号</p>
+<p>继续滑动看下一个</p>
+<p>轻触阅读原文</p>
+<p>学术AI大模型</p>
+<p>向上滑动看下一个</p>
+<p>知道了</p></main>
+<footer>内容来源：微信公众号「学术AI大模型」。本仓库用于个人学习整理，公开发布前请确认版权与授权。</footer></body></html>
