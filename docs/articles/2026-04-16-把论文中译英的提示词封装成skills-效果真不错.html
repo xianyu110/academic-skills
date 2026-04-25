@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>把论文中译英的提示词封装成skills，效果真不错！！！ · Academic Skills</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><header class="topbar"><a href="../index.html">← Academic Skills</a><a href="https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090833&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEaczbgFMoSucw-lTEtsoXhdlUgTXoRScGJZLCONyVGHp4u*0cVg-M-Y0E7qNp*AQtEgLfm9lOU*049ZJ3w0OsLQf4&amp;new=1" target="_blank" rel="noreferrer">原文</a></header>
+<main class="article"><div class="eyebrow">论文写作与语言打磨 · 2026-04-16</div><h1>把论文中译英的提示词封装成skills，效果真不错！！！</h1>
+<ul>
+<li>account: 学术AI大模型</li>
+<li>publish_time: 2026-04-16 10:07:20</li>
+<li>url: https://mp.weixin.qq.com/s?src=11&amp;timestamp=1777090833&amp;ver=6681&amp;signature=cCYZUDbo4C39pnn3sCxvuhe2iPRNDUWfKngnKQEEaczbgFMoSucw-lTEtsoXhdlUgTXoRScGJZLCONyVGHp4u*0cVg-M-Y0E7qNp*AQtEgLfm9lOU*049ZJ3w0OsLQf4&amp;new=1</li>
+<li>description: 将中文学术文本直接输入通用人工智能进行翻译，往往会损害论文的质量。</li>
+<li>timestamp: 1776305240</li>
+</ul>
+<p>---</p>
+<p>将中文学术文本直接输入通用人工智能进行翻译，往往会损害论文的质量。这种做法生成的初稿通常带有明显的“机器痕迹”，审稿人能够轻易通过过度使用的词汇识别出非人工创作的特征。</p>
+<p>更深层次的问题在于中英两种语言在底层结构上的本质差异。中文属于典型的“意合”语言，强调语意连贯且主语常有省略；而英文则是严谨的“形合”语言，依赖稳固的主谓宾框架和清晰的逻辑连词。在处理复杂的质性研究方法论，例如解释主轴编码的微观逻辑时，简单的直译会导致语义模糊和逻辑漏洞。</p>
+<p>若要产出具备投稿水准且无技术痕迹的英文手稿，简单的“一键翻译”并不可行。更科学的方案是在 Workbuddy 中调用五项专门的 AI skill，构建“学术翻译流水线”，实现词汇选择、逻辑重组与语态调整的深度优化与解耦。</p>
+<p>第一步：专业术语对齐</p>
+<p>在翻译任何一个长句之前，必须先把专业术语锁定。如果 AI 把“建构”在第一段翻成 build ，在第二段又翻成 construct ，论文就会丧失所有的学术公信力。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位精通双语的顶级术语专家。您的任务是从中文学术文本中提取核心黑话，并提供顶刊中最权威、最地道的英文对应词。 </code></pre>
+<pre><code>Goals: - 提取所有该领域的专有名词、方法论黑话和理论概念。 - 构建一个极其严格的“中英术语对照表”，确保全局绝对一致。 </code></pre>
+<pre><code>Constraints: - 绝对不要翻译正文文本。 - 面对微妙的方法论词汇（如扎根理论或质性分析相关词汇），必须优先采用该领域奠基性文献中的标准译法。 </code></pre>
+<pre><code>Skills: 学术黑话提取、双语学术语境映射。 </code></pre>
+<pre><code>Workflows: - 接收论文中的一段中文文本。 - 输出一个极其精准的矩阵表：[中文术语] -&gt; [顶刊标准英文术语]。 </code></pre>
+<p>第二步：中英逻辑解构</p>
+<p>这是消灭“中式英语（Chinglish）”的终极杀招。中文句子喜欢省略主语，或者用逗号一路逗到底。这个 skill 会在最终翻译 之前 ，先把中文文本的底层逻辑，强行掰成严酷的英文“主谓宾（SVO）”框架。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位结构语言学家。您不翻译词汇，您只翻译逻辑。中文依赖隐式语境，而英文依赖显式语法。您的任务是将中文文本重新解构为符合英文逻辑流的结构框架。 </code></pre>
+<pre><code>Goals: - 找出中文文本中缺失的主语，并在英文结构中显式地补全它们。 - 将冗长的、由逗号堆砌的中文长句，暴力拆解为独立且逻辑连词清晰的英文从句框架。 </code></pre>
+<pre><code>Constraints: - 必须显式地标出隐藏在中文里的逻辑关系（因果、转折、条件等）。 - 绝不能丢失任何经验层面的细节或细微语义。 </code></pre>
+<pre><code>Skills: 句法骨架重构、主语补全、逻辑关系映射。 </code></pre>
+<pre><code>Workflows: - 接收原始中文文本。 - 输出一段“中间态”文本。在这段文本里，逻辑连词（因为、所以、尽管）和动作的发出者（主语）都被极其明确地标记了出来，为接下来的英文翻译做好绝对的逻辑准备。 </code></pre>
+<p>第三步：高保真直译</p>
+<p>现在术语锁死了，逻辑也重构了，这个 skill 负责干最核心的苦力。它会精准地翻译文本，且绝不去“自作聪明”地润色文笔——这往往是大模型开始胡编乱造（产生幻觉）的重灾区。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: 中文 description: 您是一位极其严谨的学术翻译。您唯一的目标就是“像素级”的高保真。您需要将重构好逻辑的中文文本翻译成精准的英文，绝不添加任何多余的修辞。 </code></pre>
+<pre><code>Goals: - 极其准确地翻译文本，确保学术原意“零损耗”。 - 严格、死板地遵守用户提供的“术语对照表”。 </code></pre>
+<pre><code>Constraints: - 绝对不要试图让句子听起来“优美”或“华丽”。纯粹聚焦于清晰和精准。 - 保持极其客观的、第三人称的学术声口。 </code></pre>
+<pre><code>Skills: 高保真直译、术语表强制整合。 </code></pre>
+<pre><code>Workflows: - 接收重构后的逻辑文本（来自技能2）和术语表（来自技能1）。 - 输出一段高度准确、极其干净、但尚未进行高级润色的基础英文译文。 </code></pre>
+<p>第四步：母语语态重塑</p>
+<p>这个 skill 专门负责洗掉那股恶心的“ChatGPT塑料味”。它扮演的是一位英语母语的顶刊资深编辑，负责将基础译文彻底打磨，使其符合高水平期刊那种自然、有节奏感的学术语态。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: English/中文 description: 您是一位母语为英语的顶刊资深编辑。您的任务是打磨基础英文译文，彻底抹除所有 AI 生成的痕迹，建立极其自然、极具权威感的母语学术语态。 </code></pre>
+<pre><code>Goals: - 毫不留情地删掉那些出卖 AI 身份的词汇：delve, tapestry, crucial, multifaceted, foster, moreover 等。 - 通过平衡句子长短来优化学术节奏，使用极其精准的动词（例如：用 demonstrates 或 illustrates 替换单薄的 shows）。 </code></pre>
+<pre><code>Constraints: - 绝不能改变原意，绝不能替换已经确定的专有学术术语。 - 避开那种极其做作、晦涩难懂的“翻译腔”长句。最顶尖的学术写作永远是透明且直接的。 </code></pre>
+<pre><code>Skills: AI 痕迹抹除、母语学术表达、节奏感优化。 </code></pre>
+<pre><code>Workflows: - 接收基础英文译文。 - 输出一段经过精雕细琢、可以直接用于发表的英文段落，读起来就像是英语母语学者亲笔写的一样。 </code></pre>
+<p>第五步：逻辑漏洞与歧义审查</p>
+<p>这是最后一道防线。这个 skill 扮演臭名昭著的 Reviewer 2，用挑剔的眼光扫描打磨好的英文文本，专门揪出那些在翻译过程中幸存下来的指代不清和逻辑跳跃。</p>
+<pre><code>Profile 配置代码： </code></pre>
+<pre><code>version: 1.0 language: English/中文 description: 您是一位极其吹毛求疵的校对员和逻辑审查官。您专门扫描英文学术文本中那些在翻译过程中容易产生的微妙歧义。 </code></pre>
+<pre><code>Goals: - 识别模糊的代词指代（例如：强行将句首孤零零的 &quot;This indicates...&quot; 改为具体的 &quot;This finding indicates...&quot; ）。 - 侦测任何逻辑上的跳跃或前后矛盾的陈述。 </code></pre>
+<pre><code>Constraints: - 如果发现歧义，不要只是指出来，必须直接提供重写后的修正版本。 - 确保段落之间的过渡绝对连贯、丝滑。 </code></pre>
+<pre><code>Skills: 歧义侦测、代词精准解析、连贯性质检。 </code></pre>
+<pre><code>Workflows: - 接收打磨好的母语级英文文本。 - 输出最终的、毫无破绽的英文终稿，并附带一份简短的清单，说明您具体修复了哪些隐藏的逻辑漏洞。 </code></pre>
+<p>如何在 Workbuddy 中跑通“学术翻译流水线”</p>
+<p>处理长篇学术论文时，切忌将万字初稿直接输入大语言模型并期待理想结果。科学的方法是将论文拆解为引言、方法、结果等独立模块，并在 Workbuddy 中通过以下标准化流程逐段加工：</p>
+<p>Step 1：构建“虚拟编辑部”</p>
+<p>在 Workbuddy 中创建 5 个自定义机器人（Bots）或快捷指令。将预设的 Profile 配置代码分别植入其系统指令中，并依次命名为：@术语专家、@逻辑解构师、@高保真直译、@母语重塑专家、@审查官。</p>
+<p>Step 2：确立标准化术语表</p>
+<p>将中文原稿的核心章节提交给 @术语专家 。下达指令：“提取 20 个核心理论与方法论术语，并给出顶刊通用的英文对应词。” 获取表格后，将其作为后续翻译的唯一标准。</p>
+<p>Step 3：修复底层逻辑</p>
+<p>选取约 500 字的中文段落提交给 @逻辑解构师 。该步骤旨在补全中文表达中残缺的主语，并显化隐性连词，确保语义逻辑严密。</p>
+<p>Step 4：执行高保真翻译</p>
+<p>将经由 Step 3 重构的逻辑文本与 Step 2 的术语表一同提交给 @高保真直译 。要求其严格遵守术语规范，以最高忠实度完成文本转换。</p>
+<p>Step 5：消除机械感</p>
+<p>将初步翻译的文本提交给 @母语重塑专家 。此阶段将无情剔除“翻译腔”和“机器感”，利用顶刊论文的节奏感和地道词汇对文本进行重构。</p>
+<p>Step 6：终极逻辑审查</p>
+<p>最后，将润色后的版本提交给 @审查官 ，彻底封杀隐蔽的逻辑跳跃或指代不明等问题，确保成稿无懈可击。</p>
+<p>预览时标签不可点</p>
+<p>微信扫一扫</p>
+<p>关注该公众号</p>
+<p>继续滑动看下一个</p>
+<p>轻触阅读原文</p>
+<p>学术AI大模型</p>
+<p>向上滑动看下一个</p>
+<p>知道了</p></main>
+<footer>内容来源：微信公众号「学术AI大模型」。本仓库用于个人学习整理，公开发布前请确认版权与授权。</footer></body></html>
